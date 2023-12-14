@@ -53,7 +53,7 @@ fun SplashScreen(
             )
         )
         delay(500L)
-        onNavigate(UiEvent.Navigate(Route.SinUpScreen))
+        onNavigate(UiEvent.Navigate(Route.SinInScreen))
     }
 
     Column(

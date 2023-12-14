@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,9 +33,10 @@ fun HomeScreen(
     ) {
 
         Row(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
                 .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.End,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column {
@@ -42,6 +44,8 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(2.dp))
                 Text(text = viewModel.currentUser?.email ?: "" )
             }
+
+            Spacer(modifier = Modifier.width(8.dp))
 
             Button(onClick = {
                 viewModel.sinOut()

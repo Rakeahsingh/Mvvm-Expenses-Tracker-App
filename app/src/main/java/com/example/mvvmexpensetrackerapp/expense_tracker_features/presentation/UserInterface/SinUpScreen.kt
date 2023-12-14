@@ -32,6 +32,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -133,7 +134,8 @@ fun SinUpScreen(
         Row {
             Text(text = "Already User?.")
             Spacer(modifier = Modifier.width(2.dp))
-            Text(text = "Click Here",
+            Text(text = "SinIn Here",
+                color = Color.Blue,
                 modifier = Modifier.clickable {
                     onNavigate(UiEvent.Navigate(Route.SinInScreen))
                 })
@@ -143,6 +145,7 @@ fun SinUpScreen(
             when(it){
                 is Resources.Success -> {
                         onNavigate(UiEvent.Navigate(Route.SinInScreen))
+                    Toast.makeText(context, "SinUp Successfully", Toast.LENGTH_SHORT).show()
 
                 }
                 is Resources.Error -> {
